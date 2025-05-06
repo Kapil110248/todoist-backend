@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "https://via.placeholder.com/150", // Default photo URL
   },
+  mobileNumber: {
+    type: String,
+    required: false,
+  },
 });
 
 const User = mongoose.model("User", userSchema);

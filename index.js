@@ -24,6 +24,7 @@ app.use("/api/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/api/users", userRoutes); 
 
+
 app.listen(5000, () => {
   console.log("🚀 Server running on http://localhost:5000");
 });
