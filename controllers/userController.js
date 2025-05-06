@@ -16,12 +16,13 @@ exports.getProfile = async (req, res) => {
 // @desc    Update profile
 exports.updateProfile = async (req, res) => {
   try {
-    const { name, email } = req.body;
+    const { name, email, phone} = req.body;
 
     const user = await User.findByIdAndUpdate(
       req.user._id,
-      { name, email },
+      { name, email, phone },
       { new: true }
+      
     );
 
     res.json({ message: "Profile updated", user });

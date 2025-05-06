@@ -7,8 +7,7 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true,
-    unique: true,
+  
   },
   password: {
     type: String,
@@ -18,9 +17,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "https://via.placeholder.com/150", // Default photo URL
   },
-  mobileNumber: {
+ phone: {
     type: String,
-    required: false,
+    required: true,
+    unique: true,
+    match: /^[0-9]{10}$/, // Regex to ensure it's a 10-digit number
   },
 });
 
